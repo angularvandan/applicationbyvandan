@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container my-3 py-3" id="container">
+      <h2 class="text-center py-1">Registration Form</h2>
+      <div class="row">
+        <h3
+          class="col-md-6 bg-success text-center mx-auto rounded-pill"
+          id="success_message"
+        ></h3>
+      </div>
+      <form action="" id="resetForm">
+        <div class="row pt-3">
+          <div class="col-md-6 px-3">
+            <div class="form-group">
+              <label for="fsname">Enter First Name:</label>
+              <input
+                class="form-control"
+                id="fsname"
+                type="text"
+                placeholder="Enter First Name"
+                required
+                autocomplete="off"
+              />
+              <div class="invalid-feedback">Enter valid name !</div>
+            </div>
+          </div>
+          <div class="col-md-6 px-3">
+            <div class="form-group">
+              <label for="lsname">Enter Last Name:</label>
+              <input
+                class="form-control"
+                id="lsname"
+                type="text"
+                placeholder="Enter Last Name"
+                required
+                autocomplete="off"
+              />
+              <div class="invalid-feedback">Enter valid name !</div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-3">
+          <div class="col-lg-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="mobileno">Enter Mobile Number:</label>
+              <input
+                class="form-control"
+                id="mobileno"
+                type="text"
+                placeholder="Enter mobile number"
+                required
+                autocomplete="off"
+              />
+              <div class="invalid-feedback">Enter valid number !</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="email">Enter Email:</label>
+              <input
+                class="form-control"
+                id="email"
+                type="email"
+                placeholder="Enter email"
+                required
+                autocomplete="off"
+              />
+              <div class="invalid-feedback">Enter valid email !</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="age">Enter Age:</label>
+              <input
+                class="form-control"
+                id="age"
+                type="text"
+                placeholder="Enter Age"
+                required
+                autocomplete="off"
+              />
+              <div class="invalid-feedback">Enter valid age !</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="qualification">Enter Qualification:</label>
+              <input
+                class="form-control"
+                id="qualification"
+                type="text"
+                placeholder="Enter qualification"
+                required
+                autocomplete="off"
+              />
+              <div class="invalid-feedback">Enter valid qualification !</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row pt-3">
+          <div class="col-lg-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="password1">Enter Password:</label>
+              <input
+                class="form-control"
+                id="password1"
+                type="password"
+                placeholder="Enter password"
+                required
+                autocomplete="off"
+              />
+              <div class="invalid-feedback">Enter valid password !</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="password2">Conform Password:</label>
+              <input
+                class="form-control"
+                id="password2"
+                type="password"
+                placeholder="Enter password"
+                required
+                autocomplete="off"
+              />
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="check"
+                id="showPassword"
+              />
+              <label for="showPassword">Show Password</label>
+              <div class="invalid-feedback">Enter valid password !</div>
+            </div>
+          </div>
+          <div class="col-lg-2 px-3">
+            <label>Gender:</label>
+            <div class="form-group d-flex">
+              <div class="form-check ms-1">
+                <input
+                  type="radio"
+                  name="gender"
+                  id="male"
+                  class="form-check-input"
+                  checked
+                />
+                <label for="male" class="form-check-label">Male</label>
+              </div>
+              <div class="form-check ms-1">
+                <input
+                  type="radio"
+                  name="gender"
+                  id="female"
+                  class="form-check-input"
+                />
+                <label for="female" class="form-check-label">Female</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 px-3">
+            <label>Hobbies:</label>
+            <div class="form-group d-flex">
+              <div class="form-check ms-1">
+                <input
+                  type="checkbox"
+                  id="cricket"
+                  class="form-check-input"
+                  checked
+                />
+                <label for="cricket" class="form-check-label">Cricket</label>
+              </div>
+              <div class="form-check ms-3">
+                <input
+                  type="checkbox"
+                  id="vollyboll"
+                  class="form-check-input"
+                />
+                <label for="vollyboll" class="form-check-label"
+                  >Volleyball</label
+                >
+              </div>
+              <div class="form-check ms-3">
+                <input type="checkbox" id="football" class="form-check-input" />
+                <label for="football" class="form-check-label">Football</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row pt-1">
+          <h5>Permanent Address:</h5>
+          <div class="col-xl-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="street1">Enter Street Name:</label>
+              <input
+                type="text"
+                name="street1"
+                id="street1"
+                class="form-control"
+                required
+                autocomplete="off"
+              />
+              <div class="invalid-feedback">Field is empty !</div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="pin1">Enter PIN:</label>
+              <input
+                type="text"
+                name="pin1"
+                id="pin1"
+                class="form-control"
+                required
+                autocomplete="off"
+              />
+              <div class="invalid-feedback">Enter valid pin !</div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="state1">State:</label>
+              <select name="state1" id="state1" class="form-select">
+                <option selected>-- STATE --</option>
+                <option value="bihar">Bihar</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="up">Up</option>
+                <option value="mp">Mp</option>
+                <option value="bangalore">Bangalore</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="city1">City:</label>
+              <select name="city1" id="city1" class="form-select">
+                <option selected>-- CITY --</option>
+                <option value="patna">Patna</option>
+                <option value="pune">Pune</option>
+                <option value="gaya">Gaya</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="ranchi">Ranchi</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row pt-1">
+          <h5>Temporary Address:</h5>
+          <div class="form-group">
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="temporary_address"
+              />
+              <label for="temporary_address"
+                >Temporary address same as permanent address.</label
+              >
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="street2">Enter Street Name:</label>
+              <input
+                type="text"
+                name="street2"
+                id="street2"
+                class="form-control"
+                required
+                autocomplete="off"
+              />
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="pin2">Enter PIN:</label>
+              <input
+                type="text"
+                name="pin2"
+                id="pin2"
+                class="form-control"
+                required
+                autocomplete="off"
+              />
+              <div class="invalid-feedback">Enter valid pin !</div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="state2">State:</label>
+              <select name="state2" id="state2" class="form-select">
+                <option selected>-- STATE --</option>
+                <option value="bihar">Bihar</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="up">Up</option>
+                <option value="mp">Mp</option>
+                <option value="bangalore">Bangalore</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 px-3">
+            <div class="form-group">
+              <label for="city2">City:</label>
+              <select name="city2" id="city2" class="form-select">
+                <option selected>-- CITY --</option>
+                <option value="patna">Patna</option>
+                <option value="pune">Pune</option>
+                <option value="gaya">Gaya</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="ranchi">Ranchi</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row pt-3">
+          <div class="col-xl-12 px-3">
+            <div class="form-group">
+              <div class="form-check ms-1">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="understand"
+                  required
+                />
+                <label for="understand"
+                  >I have understand and fill all correct input field. I have
+                  read all condition of the application.</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-3">
+          <div class="col-xl-6 col-md-6 mx-auto">
+            <div class="form-group">
+              <button
+                class="btn btn-primary form-control"
+                type="submit"
+                id="btnSubmit"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

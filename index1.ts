@@ -1,32 +1,86 @@
-console.log("This is application form");
+console.log("This is typescript");
 
-const success_message=document.getElementById('success_message');
-const resetForm=document.getElementById('resetForm');
-const fs_name=document.getElementById('fsname');
-const ls_name=document.getElementById('lsname');
-const mobile_number=document.getElementById('mobileno');
-const email=document.getElementById('email');
-const age=document.getElementById('age');
-const qualification=document.getElementById('qualification');
-const password1=document.getElementById('password1');
-const password2=document.getElementById('password2');
-const show_Password=document.getElementById('showPassword');
-const street1=document.getElementById('street1');
-const pin1=document.getElementById('pin1');
-const state1=document.getElementById('state1');
-const city1=document.getElementById('city1');
+const success_message=document.getElementById('success_message')as HTMLInputElement ;
+const resetForm=document.getElementById('resetForm')as HTMLFormElement ;
+const fs_name=document.getElementById('fsname')as HTMLInputElement ;
+const ls_name=document.getElementById('lsname')as HTMLInputElement ;
+const mobile_number=document.getElementById('mobileno')as HTMLInputElement ;
+const email=document.getElementById('email')as HTMLInputElement ;
+const age=document.getElementById('age')as HTMLInputElement ;
+const qualification=document.getElementById('qualification')as HTMLInputElement ;
+const password1=document.getElementById('password1')as HTMLInputElement ;
+const password2=document.getElementById('password2')as HTMLInputElement ;
+const show_Password=document.getElementById('showPassword')as HTMLInputElement ;
+const street1=document.getElementById('street1')as HTMLInputElement ;
+const pin1=document.getElementById('pin1')as HTMLInputElement ;
+const state1=document.getElementById('state1')as HTMLSelectElement ;
+const city1=document.getElementById('city1')as HTMLSelectElement ;
 
-const street2=document.getElementById('street2');
-const pin2=document.getElementById('pin2');
-const state2=document.getElementById('state2');
-const city2=document.getElementById('city2');
-const understand=document.getElementById('understand');
-const temporary_address=document.getElementById('temporary_address');
-const btn_submit=document.getElementById('btnSubmit');
-let allInputOk=new Array();
+const street2=document.getElementById('street2')as HTMLInputElement ;
+const pin2=document.getElementById('pin2')as HTMLInputElement ;
+const state2=document.getElementById('state2')as HTMLSelectElement;
+const city2=document.getElementById('city2')as HTMLSelectElement ;
+const understand=document.getElementById('understand')as HTMLInputElement ;
+const temporary_address=document.getElementById('temporary_address')as HTMLInputElement;
+const btn_submit=document.getElementById('btnSubmit')!;
 
+let allInputOk:boolean[]=new Array();
+
+interface valueObjUsers{
+    fs_name:string,
+    ls_name:string,
+    mobile_number:string,
+    email:string,
+    age:string,
+    qualification:string,
+    password1:string,
+    password2:string,
+    street1:string,
+    pin1:string,
+    state1:string,
+    city1:string,
+    street2:string,
+    pin2:string,
+    state2:string,
+    city2:string
+}
+function valueStore(){
+    let valueObj:valueObjUsers={
+        
+        fs_name:fs_name.value,
+        ls_name:ls_name.value,
+        mobile_number:mobile_number.value,
+        email:email.value,
+        age:age.value,
+        qualification:qualification.value,
+        password1:password1.value,
+        password2:password2.value,
+        street1:street1.value,
+        pin1:pin1.value,
+        state1:state1.value,
+        city1:city1.value,
+        street2:street2.value,
+        pin2:pin2.value,
+        state2:state2.value,
+        city2:city2.value
+    }
+    dataBase(valueObj);
+}
+function dataBase(valueObj:Object){
+    let url="https://winter-summer-sceptre.glitch.me/submit";
+    let parameter={
+        method:'POST',
+        headers:{
+            'Content-type':'application/json'
+        },
+        body:JSON.stringify(valueObj)
+    };
+    fetch(url,parameter).then(response=>response.json()).then(data=>{
+        console.log(data);
+    });
+}
 btn_submit.addEventListener('click',successMessage);
-function successMessage(e){
+function successMessage(e:any){
     if(understand.checked){
         // length of all input field 
         let count=0;
@@ -36,6 +90,7 @@ function successMessage(e){
             }
         }
         if(count==allInputOk.length){
+            valueStore();
             resetForm.reset();
             allInputOk.push(false);
             success_message.innerText="Successfully Registered";
@@ -98,16 +153,16 @@ function temporaryAddress(){
     if(temporary_address.checked){
         let option_selected_value=state1.value;
         for(let i=1;i<state2.children.length;i++){
-            if(option_selected_value==state2.children[i].value){
-                state2.children[i].selected=true;
+            if(option_selected_value==(state2.children[i]as HTMLSelectElement).value){
+                (state2.children[i]as HTMLOptionElement).selected=true;
             }
         }
     }
     if(temporary_address.checked){
         let option_selected_value=city1.value;
         for(let i=1;i<city2.children.length;i++){
-            if(option_selected_value==city2.children[i].value){
-                city2.children[i].selected=true;
+            if(option_selected_value==(city2.children[i]as HTMLSelectElement).value){
+                (city2.children[i]as HTMLOptionElement).selected=true;
             }
         }
     }
@@ -172,7 +227,7 @@ function validateEmail(){
     }
 }
 function validateAge(){
-    if(age.value<=130&&age.value>0){
+    if(parseInt(age.value)<= 130 && parseInt(age.value) > 0){
         age.classList.add('is-valid');
         age.classList.remove('is-invalid');
         allInputOk[4]=true;

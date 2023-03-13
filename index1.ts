@@ -66,7 +66,7 @@ function valueStore(){
     }
     dataBase(valueObj);
 }
-function dataBase(valueObj:Object){
+function dataBase(valueObj:valueObjUsers){
     let url="https://winter-summer-sceptre.glitch.me/submit";
     let parameter={
         method:'POST',
